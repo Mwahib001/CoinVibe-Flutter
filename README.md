@@ -27,12 +27,6 @@
 
 ---
 
-## 📸 Screenshots
-
-*(Insert screenshots or a demo GIF here)*
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
