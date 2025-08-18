@@ -5,7 +5,6 @@ import 'package:mad_project/modules/liveChartModel.dart';
 import '../views/searchView.dart';
 import '../views/profileView.dart';
 import '../views/favorites.dart';
-import '../views/dynamicChart.dart';
 import '../views/newsSection.dart';
 import '../views/displayCoin.dart'; // Import the crypto display screen
 

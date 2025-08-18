@@ -4,6 +4,8 @@ import '../services/liveCharts/fetchChart.dart' as fetchChart;
 import '../screens/showChartScreen.dart';
 
 class DynamicChartScreen extends StatefulWidget {
+  const DynamicChartScreen({super.key});
+
   @override
   _DynamicChartScreenState createState() => _DynamicChartScreenState();
 }

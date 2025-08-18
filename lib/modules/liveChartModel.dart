@@ -8,10 +8,10 @@ class ShowChartScreen extends StatefulWidget {
   final String vsCurrency;
 
   const ShowChartScreen({
-    Key? key,
+    super.key,
     required this.cryptoId,
     required this.vsCurrency,
-  }) : super(key: key);
+  });
 
   @override
   _ShowChartScreenState createState() => _ShowChartScreenState();

@@ -13,7 +13,7 @@ class MainScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 330),
+            SizedBox(height: 200),
             Align(
               alignment: Alignment.center,
               child: const Text(

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class CryptoNews extends StatefulWidget {
+  const CryptoNews({super.key});
+
   @override
   _CryptoNewsState createState() => _CryptoNewsState();
 }
@@ -91,14 +93,14 @@ class _CryptoNewsState extends State<CryptoNews> {
           });
           fetchCryptoNews(_selectedType);
         },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: isSelected ? Colors.yellow : Colors.grey,
+        ),
         child: Text(
           type,
           style: TextStyle(
             color: isSelected ? Colors.black : Colors.white,
           ),
-        ),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: isSelected ? Colors.yellow : Colors.grey,
         ),
       ),
     );
@@ -197,7 +199,7 @@ class _CryptoNewsState extends State<CryptoNews> {
 class NewsDetailScreen extends StatelessWidget {
   final String newsId;
 
-  const NewsDetailScreen({Key? key, required this.newsId}) : super(key: key);
+  const NewsDetailScreen({super.key, required this.newsId});
 
   Future<Map<String, dynamic>> fetchNewsDetail() async {
     final String apiUrl = 'https://openapiv1.coinstats.app/news/$newsId';

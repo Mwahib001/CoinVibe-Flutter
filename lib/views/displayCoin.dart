@@ -3,6 +3,8 @@ import '../services/coinListService.dart';
 import '../modules/coinListModel.dart';
 
 class FetchCryptoScreen extends StatefulWidget {
+  const FetchCryptoScreen({super.key});
+
   @override
   _FetchCryptoScreenState createState() => _FetchCryptoScreenState();
 }
