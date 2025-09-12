@@ -3,16 +3,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-import '../screens/resetPassScreen.dart'; // Import the reset password screen
+import '../screens/reset_pass_screen.dart'; // Import the reset password screen
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
 
   @override
-  _ProfileViewState createState() => _ProfileViewState();
+  ProfileViewState createState() => ProfileViewState();
 }
 
-class _ProfileViewState extends State<ProfileView> {
+class ProfileViewState extends State<ProfileView> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
@@ -41,6 +41,7 @@ class _ProfileViewState extends State<ProfileView> {
         DocumentSnapshot userData =
             await _firestore.collection('users').doc(user.uid).get();
         if (userData.exists) {
+          if (!mounted) return;
           setState(() {
             _firstNameController.text = userData['firstName'] ?? '';
             _lastNameController.text = userData['lastName'] ?? '';
@@ -53,6 +54,7 @@ class _ProfileViewState extends State<ProfileView> {
             _isLoading = false;
           });
         } else {
+          if (!mounted) return;
           setState(() {
             _isLoading = false;
             _errorMessage = 'User data not found';
@@ -60,6 +62,7 @@ class _ProfileViewState extends State<ProfileView> {
         }
       }
     } catch (e) {
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
         _errorMessage = 'Failed to load user data: $e';
@@ -103,16 +106,19 @@ class _ProfileViewState extends State<ProfileView> {
               .collection('users')
               .doc(user.uid)
               .update(updatedData);
+          if (!mounted) return;
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Profile updated successfully')),
           );
         } else {
+          if (!mounted) return;
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('No changes to update')),
           );
         }
       }
     } catch (e) {
+      if (!mounted) return;
       setState(() {
         _errorMessage = 'Failed to update profile: $e';
       });
@@ -121,6 +127,7 @@ class _ProfileViewState extends State<ProfileView> {
 
   Future<void> _signOut() async {
     await _auth.signOut();
+    if (!mounted) return;
     Navigator.pushReplacementNamed(context, '/mainscreen');
   }
 
@@ -217,7 +224,7 @@ class _ProfileViewState extends State<ProfileView> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ResetPassScreen()),
+                              builder: (context) => const ResetPassScreen()),
                         );
                       },
                       style: ElevatedButton.styleFrom(

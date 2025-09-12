@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:mad_project/modules/coinListModel.dart';
+import 'package:mad_project/modules/coin_list_model.dart';
 // import '../modules/crypto.dart';
 // import '../services/fetchCrypto.dart';
-import '../services/coinListService.dart';
+import '../services/coin_list_service.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
 
   @override
-  _SearchViewState createState() => _SearchViewState();
+  SearchViewState createState() => SearchViewState();
 }
 
-class _SearchViewState extends State<SearchView> {
+class SearchViewState extends State<SearchView> {
   final fetchCoinService = FetchCoinService();
   final TextEditingController _searchController = TextEditingController();
   List<Crypto> _cryptoList = []; // Holds all crypto data

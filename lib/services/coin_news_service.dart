@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -6,10 +7,10 @@ class NewsScreen extends StatefulWidget {
   const NewsScreen({super.key});
 
   @override
-  _NewsScreenState createState() => _NewsScreenState();
+  NewsScreenState createState() => NewsScreenState();
 }
 
-class _NewsScreenState extends State<NewsScreen> {
+class NewsScreenState extends State<NewsScreen> {
   List<dynamic> _news = [];
   bool _isLoading = true;
   String? _errorMessage;
@@ -99,6 +100,6 @@ class _NewsScreenState extends State<NewsScreen> {
 
   void _openUrl(String url) async {
     // Add logic to open URLs, like using `url_launcher` package.
-    print('Open URL: $url'); // Placeholder for URL opening logic.
+    log('Open URL: $url'); // Placeholder for URL opening logic.
   }
 }

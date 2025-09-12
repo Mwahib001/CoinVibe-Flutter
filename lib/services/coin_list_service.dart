@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../modules/coinListModel.dart';
+import '../modules/coin_list_model.dart';
 
 class FetchCoinService {
   final String _baseUrl =

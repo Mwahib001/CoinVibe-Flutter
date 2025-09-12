@@ -5,10 +5,10 @@ class ResetPassScreen extends StatefulWidget {
   const ResetPassScreen({super.key});
 
   @override
-  _ResetPassScreenState createState() => _ResetPassScreenState();
+  ResetPassScreenState createState() => ResetPassScreenState();
 }
 
-class _ResetPassScreenState extends State<ResetPassScreen> {
+class ResetPassScreenState extends State<ResetPassScreen> {
   final TextEditingController _emailController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   String? _errorMessage;
@@ -22,18 +22,23 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
 
     try {
       await _auth.sendPasswordResetEmail(email: _emailController.text);
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Password reset email sent')),
       );
+      if (!mounted) return;
       Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
+      if (!mounted) return;
       setState(() {
         _errorMessage = e.message;
       });
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 

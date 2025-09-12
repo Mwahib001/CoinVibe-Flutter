@@ -14,10 +14,10 @@ class ShowChartScreen extends StatefulWidget {
   });
 
   @override
-  _ShowChartScreenState createState() => _ShowChartScreenState();
+  ShowChartScreenState createState() => ShowChartScreenState();
 }
 
-class _ShowChartScreenState extends State<ShowChartScreen> {
+class ShowChartScreenState extends State<ShowChartScreen> {
   List<FlSpot> _chartData = [];
   bool _isLoading = true;
   String? _errorMessage;
@@ -107,7 +107,7 @@ class _ShowChartScreenState extends State<ShowChartScreen> {
                             barWidth: 2,
                             belowBarData: BarAreaData(
                               show: true,
-                              color: Colors.yellow.withOpacity(0.3),
+                              color: Colors.yellow.withAlpha(33),
                             ),
                           ),
                         ],

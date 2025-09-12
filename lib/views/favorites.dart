@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../services/coinListService.dart';
-import '../modules/coinListModel.dart';
+import '../services/coin_list_service.dart';
+import '../modules/coin_list_model.dart';
 
 class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({super.key});
 
   @override
-  _FavoritesScreenState createState() => _FavoritesScreenState();
+  FavoritesScreenState createState() => FavoritesScreenState();
 }
 
-class _FavoritesScreenState extends State<FavoritesScreen> {
+class FavoritesScreenState extends State<FavoritesScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   List<Crypto> _favoriteCryptos = [];
@@ -36,6 +36,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
           }
         },
         onError: (error) {
+          if (!mounted) return;
           setState(() {
             _isLoading = false;
             _errorMessage = 'Failed to fetch favorites: $error';
@@ -56,11 +57,13 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
         }
       }
 
+      if (!mounted) return;
       setState(() {
         _favoriteCryptos = favoriteCryptos;
         _isLoading = false;
       });
     } catch (e) {
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
         _errorMessage = 'Failed to load crypto data: $e';
@@ -69,24 +72,26 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   }
 
   /// Add a coin to the user's favorites
-  Future<void> _addToFavorites(Crypto crypto) async {
-    try {
-      User? user = _auth.currentUser;
-      if (user != null) {
-        await _firestore.collection('users').doc(user.uid).update({
-          'favorites': FieldValue.arrayUnion([crypto.id]),
-        });
+  // Future<void> _addToFavorites(Crypto crypto) async {
+  //   try {
+  //     User? user = _auth.currentUser;
+  //     if (user != null) {
+  //       await _firestore.collection('users').doc(user.uid).update({
+  //         'favorites': FieldValue.arrayUnion([crypto.id]),
+  //       });
 
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('${crypto.name} added to favorites')),
-        );
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Failed to add to favorites: ${e.toString()}')),
-      );
-    }
-  }
+  //       if (!mounted) return;
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         SnackBar(content: Text('${crypto.name} added to favorites')),
+  //       );
+  //     }
+  //   } catch (e) {
+  //     if (!mounted) return;
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       SnackBar(content: Text('Failed to add to favorites: ${e.toString()}')),
+  //     );
+  //   }
+  // }
 
   /// Remove a coin from the user's favorites
   Future<void> _removeFromFavorites(Crypto crypto) async {
@@ -97,11 +102,13 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
           'favorites': FieldValue.arrayRemove([crypto.id]),
         });
 
+        if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('${crypto.name} removed from favorites')),
         );
       }
     } catch (e) {
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
             content: Text('Failed to remove from favorites: ${e.toString()}')),

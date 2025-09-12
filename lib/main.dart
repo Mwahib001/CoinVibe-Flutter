@@ -4,11 +4,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:mad_project/screens/dashboard.dart';
 import 'package:mad_project/screens/login.dart';
 import 'package:mad_project/screens/register.dart';
-import 'package:mad_project/screens/resetPassScreen.dart';
+import 'package:mad_project/screens/reset_pass_screen.dart';
 import 'package:mad_project/screens/splash.dart'; // Import the custom splash screen
 // import 'package:shared_preferences/shared_preferences.dart';
 import 'firebase_options.dart';
-import 'screens/mainScreen.dart';
+import 'screens/main_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

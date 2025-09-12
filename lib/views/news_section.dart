@@ -6,10 +6,10 @@ class CryptoNews extends StatefulWidget {
   const CryptoNews({super.key});
 
   @override
-  _CryptoNewsState createState() => _CryptoNewsState();
+  CryptoNewsState createState() => CryptoNewsState();
 }
 
-class _CryptoNewsState extends State<CryptoNews> {
+class CryptoNewsState extends State<CryptoNews> {
   List<dynamic> _news = [];
   bool _isLoading = false;
   String _errorMessage = '';

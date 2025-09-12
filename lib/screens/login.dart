@@ -6,10 +6,10 @@ class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  LoginScreenState createState() => LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -30,18 +30,22 @@ class _LoginScreenState extends State<LoginScreen> {
           email: _emailController.text,
           password: _passwordController.text,
         );
+        if (!mounted) return;
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const DashboardScreen()),
         );
       } on FirebaseAuthException catch (e) {
+        if (!mounted) return;
         setState(() {
           _errorMessage = e.message;
         });
       } finally {
-        setState(() {
-          _isLoading = false;
-        });
+        if (mounted) {
+          setState(() {
+            _isLoading = false;
+          });
+        }
       }
     }
   }
@@ -167,20 +171,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: _signIn,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.yellow, // Background color
-                    minimumSize:
-                        const Size(double.infinity, 50), // Full width button
+                    minimumSize: const Size(double.infinity, 50), // Full width button
                     shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(0), // Rectangular shape
+                      borderRadius: BorderRadius.circular(0), // Rectangular shape
                     ),
                   ),
                   child: _isLoading
                       ? const CircularProgressIndicator(
-                          valueColor:
-                              AlwaysStoppedAnimation<Color>(Colors.black),
+                          valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
                         )
-                      : const Text('Login',
-                          style: TextStyle(color: Colors.black)),
+                      : const Text('Login', style: TextStyle(color: Colors.black)),
                 ),
                 const SizedBox(height: 20),
                 Row(

@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:mad_project/modules/liveChartModel.dart';
-import '../views/searchView.dart';
-import '../views/profileView.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+import '../views/search_view.dart';
+import '../views/profile_view.dart';
 import '../views/favorites.dart';
-import '../views/newsSection.dart';
-import '../views/displayCoin.dart'; // Import the crypto display screen
+import '../views/news_section.dart';
+import '../views/display_coin.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
   @override
-  _DashboardScreenState createState() => _DashboardScreenState();
+  DashboardScreenState createState() => DashboardScreenState();
 }
 
-class _DashboardScreenState extends State<DashboardScreen> {
+class DashboardScreenState extends State<DashboardScreen> {
   int _selectedIndex = 0;
   final PageController _pageController = PageController();
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  List<String> _favoriteIds = []; // Correctly defined variable
+  // final FirebaseAuth _auth = FirebaseAuth.instance;
+  // final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  // List<String> _favoriteIds = [];
 
   @override
-  void initState() {
-    super.initState();
-    _loadFavorites();
-  }
+  // void initState() {
+  //   super.initState();
+  //   _loadFavorites();
+  // }
 
   @override
   void dispose() {
@@ -34,21 +33,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
     super.dispose();
   }
 
-  Future<void> _loadFavorites() async {
-    try {
-      User? user = _auth.currentUser;
-      if (user != null) {
-        DocumentSnapshot userData =
-            await _firestore.collection('users').doc(user.uid).get();
-        List<dynamic> favorites = userData['favorites'] ?? [];
-        setState(() {
-          _favoriteIds = favorites.map((fav) => fav.toString()).toList();
-        });
-      }
-    } catch (e) {
-      print('Failed to load favorites: $e');
-    }
-  }
+  // Future<void> _loadFavorites() async {
+  //   try {
+  //     User? user = _auth.currentUser;
+  //     if (user != null) {
+  //       DocumentSnapshot userData =
+  //           await _firestore.collection('users').doc(user.uid).get();
+  //       List<dynamic> favorites = userData['favorites'] ?? [];
+  //       setState(() {
+  //         _favoriteIds = favorites.map((fav) => fav.toString()).toList();
+  //       });
+  //     }
+  //   } catch (e) {
+  //     print('Failed to load favorites: $e');
+  //   }
+  // }
 
   void _onItemTapped(int index) {
     setState(() {

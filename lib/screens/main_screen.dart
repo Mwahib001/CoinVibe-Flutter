@@ -56,6 +56,23 @@ class MainScreen extends StatelessWidget {
                   const Text('Register', style: TextStyle(color: Colors.black)),
             ),
             const SizedBox(height: 10),
+            // ElevatedButton.icon(
+            //   onPressed: () {
+            //   },
+            //   style: ElevatedButton.styleFrom(
+            //     backgroundColor: Colors.yellow,
+            //     minimumSize: const Size(double.infinity, 50),
+            //     shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(0),
+            //     ),
+            //   ),
+            //   icon: Image.asset(
+            //     'assets/images/google.com.png',
+            //     height: 24.0,
+            //   ),
+            //   label: const Text('Sign in with Google',
+            //       style: TextStyle(color: Colors.black)),
+            // ),
           ],
         ),
       ),

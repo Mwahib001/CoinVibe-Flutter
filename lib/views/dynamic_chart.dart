@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:mad_project/modules/liveChartModel.dart';
-import '../services/liveCharts/fetchChart.dart' as fetchChart;
-import '../screens/showChartScreen.dart';
+import 'package:mad_project/modules/live_chart_model.dart';
+// import '../services/liveCharts/fetchChart.dart' as fetch_chart;
+// import '../screens/showChartScreen.dart';
 
 class DynamicChartScreen extends StatefulWidget {
   const DynamicChartScreen({super.key});
 
   @override
-  _DynamicChartScreenState createState() => _DynamicChartScreenState();
+  DynamicChartScreenState createState() => DynamicChartScreenState();
 }
 
-class _DynamicChartScreenState extends State<DynamicChartScreen> {
+class DynamicChartScreenState extends State<DynamicChartScreen> {
   late Future<List<Map<String, String>>> _cryptosFuture;
   late Future<List<String>> _fiatsFuture;
   String? _selectedCrypto;
@@ -20,8 +20,8 @@ class _DynamicChartScreenState extends State<DynamicChartScreen> {
   @override
   void initState() {
     super.initState();
-    _cryptosFuture = fetchChart.CoinGeckoService().fetchCoinsList();
-    _fiatsFuture = fetchChart.CoinGeckoService().fetchSupportedCurrencies();
+    // _cryptosFuture = fetch_chart.CoinGeckoService().fetchCoinsList();
+    // _fiatsFuture = fetch_chart.CoinGeckoService().fetchSupportedCurrencies();
   }
 
   void _showChart() {

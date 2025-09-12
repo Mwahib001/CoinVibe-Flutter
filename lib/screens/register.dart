@@ -7,10 +7,10 @@ class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
   @override
-  _RegisterScreenState createState() => _RegisterScreenState();
+  RegisterScreenState createState() => RegisterScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -46,21 +46,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
         await _saveUserData(userCredential.user);
 
+        if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Registration successful')),
         );
+        if (!mounted) return;
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const DashboardScreen()),
         );
       } on FirebaseAuthException catch (e) {
+        if (!mounted) return;
         setState(() {
           _errorMessage = e.message;
         });
       } finally {
-        setState(() {
-          _isLoading = false;
-        });
+        if (mounted) {
+          setState(() {
+            _isLoading = false;
+          });
+        }
       }
     }
   }
@@ -264,11 +269,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     onPressed: _register,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.yellow, // Background color
-                      minimumSize:
-                          const Size(double.infinity, 50), // Full width button
+                      minimumSize: const Size(double.infinity, 50), // Full width button
                       shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(0), // Rectangular shape
+                        borderRadius: BorderRadius.circular(0), // Rectangular shape
                       ),
                     ),
                     child: _isLoading
@@ -295,10 +298,10 @@ class PasswordField extends StatefulWidget {
   const PasswordField({required this.controller, this.onTap, super.key});
 
   @override
-  _PasswordFieldState createState() => _PasswordFieldState();
+  PasswordFieldState createState() => PasswordFieldState();
 }
 
-class _PasswordFieldState extends State<PasswordField> {
+class PasswordFieldState extends State<PasswordField> {
   bool _obscureText = true;
 
   void _toggleVisibility() {

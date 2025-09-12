@@ -1,15 +1,17 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import '../services/coinListService.dart';
-import '../modules/coinListModel.dart';
+import '../services/coin_list_service.dart';
+import '../modules/coin_list_model.dart';
 
 class FetchCryptoScreen extends StatefulWidget {
   const FetchCryptoScreen({super.key});
 
   @override
-  _FetchCryptoScreenState createState() => _FetchCryptoScreenState();
+  FetchCryptoScreenState createState() => FetchCryptoScreenState();
 }
 
-class _FetchCryptoScreenState extends State<FetchCryptoScreen> {
+class FetchCryptoScreenState extends State<FetchCryptoScreen> {
   bool isLoading = true;
   String errorMessage = '';
   List<Crypto> cryptoData = [];
@@ -37,7 +39,7 @@ class _FetchCryptoScreenState extends State<FetchCryptoScreen> {
         isLoading = false;
         errorMessage = e.toString();
       });
-      print('Error: $e'); // Debugging
+      log('Error: $e'); // Debugging
     }
   }
 

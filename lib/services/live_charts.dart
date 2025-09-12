@@ -6,10 +6,10 @@ class CryptoChartScreen extends StatefulWidget {
   const CryptoChartScreen({super.key});
 
   @override
-  _CryptoChartScreenState createState() => _CryptoChartScreenState();
+  CryptoChartScreenState createState() => CryptoChartScreenState();
 }
 
-class _CryptoChartScreenState extends State<CryptoChartScreen> {
+class CryptoChartScreenState extends State<CryptoChartScreen> {
   final String _apiKey = "YOUR_API_KEY"; // Replace with your API key
   List<dynamic> _chartData = [];
   bool _isLoading = true;
