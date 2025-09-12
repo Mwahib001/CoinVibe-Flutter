@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mad_project/modules/liveChartModel.dart';
+// import 'package:mad_project/modules/liveChartModel.dart';
 import '../views/searchView.dart';
 import '../views/profileView.dart';
 import '../views/favorites.dart';
@@ -92,10 +92,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
           FetchCryptoScreen(), // Home
           const SearchView(), // Search
           FavoritesScreen(), // Favorites
-          const ShowChartScreen(
-            cryptoId: '',
-            vsCurrency: '',
-          ), // Chart
+          // const ShowChartScreen(
+          //   cryptoId: '',
+          //   vsCurrency: '',
+          // ), // Chart
           CryptoNews(), // News
         ],
       ),
