@@ -16,6 +16,7 @@ dependencies:
   provider: ^6.1.2
   fl_chart: ^1.1.0
   intl: ^0.20.1
+  google_sign_in: ^7.1.1
   # shared_preferences: ^2.3.4
 
 

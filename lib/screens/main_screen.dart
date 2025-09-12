@@ -1,4 +1,3 @@
-// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -13,10 +12,10 @@ class MainScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 200),
-            Align(
+            const Spacer(flex: 2),
+            const Align(
               alignment: Alignment.center,
-              child: const Text(
+              child: Text(
                 'COIN VIBE',
                 style: TextStyle(
                   color: Colors.yellow,
@@ -26,7 +25,7 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 280),
+            const Spacer(flex: 3),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
@@ -55,24 +54,7 @@ class MainScreen extends StatelessWidget {
               child:
                   const Text('Register', style: TextStyle(color: Colors.black)),
             ),
-            const SizedBox(height: 10),
-            // ElevatedButton.icon(
-            //   onPressed: () {
-            //   },
-            //   style: ElevatedButton.styleFrom(
-            //     backgroundColor: Colors.yellow,
-            //     minimumSize: const Size(double.infinity, 50),
-            //     shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(0),
-            //     ),
-            //   ),
-            //   icon: Image.asset(
-            //     'assets/images/google.com.png',
-            //     height: 24.0,
-            //   ),
-            //   label: const Text('Sign in with Google',
-            //       style: TextStyle(color: Colors.black)),
-            // ),
+            const Spacer(),
           ],
         ),
       ),
