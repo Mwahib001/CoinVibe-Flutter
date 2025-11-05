@@ -1,193 +1,72 @@
-﻿# 💹 CoinVibe – Flutter Crypto Tracker & News App# 💹 CoinVibe – Flutter Crypto Tracker & News App# 💹 CoinVibe – Flutter Crypto Tracker & News App
-
-
+﻿# 💹 CoinVibe – Flutter Crypto Tracker & News App
 
 **CoinVibe** is a modern Flutter mobile application that delivers real-time cryptocurrency tracking, personalized favorites, intelligent search, and comprehensive crypto news — all in one sleek, responsive interface. Built for both casual investors and crypto enthusiasts, CoinVibe combines powerful functionality with an intuitive dark-themed UI.
 
 
 
----**CoinVibe** is a modern Flutter mobile application that delivers real-time cryptocurrency tracking, personalized favorites, intelligent search, and comprehensive crypto news — all in one sleek, responsive interface. Built for both casual investors and crypto enthusiasts, CoinVibe combines powerful functionality with an intuitive dark-themed UI.**CoinVibe** is a modern Flutter mobile application that delivers real-time cryptocurrency tracking, personalized favorites, intelligent search, and comprehensive crypto news — all in one sleek, responsive interface. Built for both casual investors and crypto enthusiasts, CoinVibe combines powerful functionality with an intuitive dark-themed UI.
-
-
-
 ## ✨ Key Features
 
-
-
-### 📊 **Live Market Data**------
-
+### 📊 **Live Market Data**
 - **Real-time cryptocurrency tracking** for the top **100 cryptocurrencies**
-
 - Live price updates, market capitalization, and 24-hour price changes
-
 - Color-coded indicators (green for gains, red for losses)
-
-- Powered by **CoinMarketCap Pro API** for accurate, up-to-date data## ✨ Key Features## ✨ Key Features
-
-
+- Powered by **CoinMarketCap Pro API** for accurate, up-to-date data
 
 ### 🔍 **Advanced Search**
-
 - **Instant search** by cryptocurrency name or symbol
-
-- Real-time filtering as you type### 📊 **Live Market Data**### 📊 **Live Market Data**
-
+- Real-time filtering as you type
 - Clean, responsive search interface with visual feedback
 
-- **Real-time cryptocurrency tracking** for the top **100 cryptocurrencies**- **Real-time cryptocurrency tracking** for the top **100 cryptocurrencies**
-
 ### ❤️ **Personalized Favorites**
-
-- **Add/remove favorites** with one-tap functionality- Live price updates, market capitalization, and 24-hour price changes- Live price updates, market capitalization, and 24-hour price changes
-
+- **Add/remove favorites** with one-tap functionality
 - **Real-time synchronization** across devices using Firebase Firestore
-
-- Persistent favorites storage with user authentication- Color-coded indicators (green for gains, red for losses)- Color-coded indicators (green for gains, red for losses)
-
+- Persistent favorites storage with user authentication
 - Quick access to your preferred cryptocurrencies
 
-- Powered by **CoinMarketCap Pro API** for accurate, up-to-date data- Powered by **CoinMarketCap Pro API** for accurate, up-to-date data
-
 ### 📰 **Comprehensive Crypto News**
-
 - **Multi-category news feed** including:
-
   - 🐂 Bullish News
-
-  - 🐻 Bearish News### 🔍 **Advanced Search**### 🔍 **Advanced Search**
-
+  - 🐻 Bearish News
   - 📈 Trending Topics
-
-  - 🆕 Latest Updates- **Instant search** by cryptocurrency name or symbol- **Instant search** by cryptocurrency name or symbol
-
+  - 🆕 Latest Updates
   - ⭐ Handpicked Articles
-
-- **Detailed news viewer** with full article content- Real-time filtering as you type- Real-time filtering as you type
-
+- **Detailed news viewer** with full article content
 - **Image-rich articles** with source attribution
-
-- Powered by **CoinStats API** for diverse news sources- Clean, responsive search interface with visual feedback- Clean, responsive search interface with visual feedback
-
-
+- Powered by **CoinStats API** for diverse news sources
 
 ### 🔐 **Secure Authentication**
-
 - **Firebase Authentication** with email/password
-
-- **Google Sign-In** integration for seamless login### ❤️ **Personalized Favorites**### ❤️ **Personalized Favorites**
-
+- **Google Sign-In** integration for seamless login
 - User profile management and data persistence
-
-- **Add/remove favorites** with one-tap functionality- **Add/remove favorites** with one-tap functionality
-
----
-
-- **Real-time synchronization** across devices using Firebase Firestore- **Real-time synchronization** across devices using Firebase Firestore
-
-## 📱 Screenshots
-
-- Persistent favorites storage with user authentication- Persistent favorites storage with user authentication
-
-### **Dashboard Screen**
-
-![Dashboard Screen](screenshots/dashboard-screen.jpg)- Quick access to your preferred cryptocurrencies- Quick access to your preferred cryptocurrencies
-
-*The main dashboard displaying live cryptocurrency data with favorites functionality*
-
-
-
-### **Search Screen**
-
-![Search Screen](screenshots/search-screen.jpg)### 📰 **Comprehensive Crypto News**### 📰 **Comprehensive Crypto News**
-
-*Advanced search functionality to find cryptocurrencies by name or symbol*
-
-- **Multi-category news feed** including:- **Multi-category news feed** including:
-
-### **News Screen**
-
-![News Screen](screenshots/news-screen.jpg)  - 🐂 Bullish News  - 🐂 Bullish News
-
-*Comprehensive crypto news feed with multiple categories*
-
-  - 🐻 Bearish News  - 🐻 Bearish News
-
-### **Login/Register Screen**
-
-![Login/Register Screen](screenshots/login-register-screen.jpg)  - 📈 Trending Topics  - 📈 Trending Topics
-
-*Secure authentication with Firebase and Google Sign-In*
-
-  - 🆕 Latest Updates  - 🆕 Latest Updates
-
-### **Profile Screen**
-
-![Profile Screen](screenshots/profile-screen.jpg)  - ⭐ Handpicked Articles  - ⭐ Handpicked Articles
-
-*User profile management and settings*
-
-- **Detailed news viewer** with full article content- **Detailed news viewer** with full article content
-
----
-
-- **Image-rich articles** with source attribution- **Image-rich articles** with source attribution
 
 ## 🛠️ Technology Stack
 
-- Powered by **CoinStats API** for diverse news sources- Powered by **CoinStats API** for diverse news sources
-
 ### **Core Framework**
-
 - **Flutter 3.5.4+** - Cross-platform mobile development
-
 - **Dart 3.5.4+** - Modern, type-safe programming language
 
-### 🔐 **Secure Authentication**### 🔐 **Secure Authentication**
-
 ### **Backend & APIs**
-
-- **Firebase Core** - App initialization and configuration- **Firebase Authentication** with email/password- **Firebase Authentication** with email/password
-
+- **Firebase Core** - App initialization and configuration
 - **Firebase Auth** - User authentication and security
-
-- **Firebase Firestore** - Real-time NoSQL database for favorites- **Google Sign-In** integration for seamless login- **Google Sign-In** integration for seamless login
-
+- **Firebase Firestore** - Real-time NoSQL database for favorites
 - **CoinMarketCap Pro API** - Cryptocurrency market data
-
-- **CoinStats API** - Cryptocurrency news and analysis- User profile management and data persistence- User profile management and data persistence
-
-
+- **CoinStats API** - Cryptocurrency news and analysis
 
 ### **State Management & UI**
-
 - **setState()** - Flutter's built-in state management
-
-- **Provider** - Dependency injection and state management (ready for expansion)------
-
+- **Provider** - Dependency injection and state management (ready for expansion)
 - **Material Design 3** - Modern, responsive UI components
-
 - **Custom Themes** - Dark mode optimized for crypto trading
 
-
-
-### **Networking & Data**## 🛠️ Technology Stack## 🛠️ Technology Stack
-
+### **Networking & Data**
 - **HTTP Package** - RESTful API communication
-
 - **JSON Parsing** - Efficient data serialization
-
 - **Async Programming** - Future-based operations with error handling
 
-### **Core Framework**### **Core Framework**
-
 ### **Additional Libraries**
-
-- **Google Sign-In** - OAuth2 authentication- **Flutter 3.5.4+** - Cross-platform mobile development- **Flutter 3.5.4+** - Cross-platform mobile development
-
+- **Google Sign-In** - OAuth2 authentication
 - **FL Chart** - Chart visualization (ready for implementation)
-
-- **Intl** - Internationalization support- **Dart 3.5.4+** - Modern, type-safe programming language- **Dart 3.5.4+** - Modern, type-safe programming language
-
+- **Intl** - Internationalization support
 - **Flutter Launcher Icons** - Custom app icons
 
 
