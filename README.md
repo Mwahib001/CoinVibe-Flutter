@@ -13,293 +13,142 @@
 - Powered by **CoinMarketCap Pro API** for accurate, up-to-date data
 
 ### 🔍 **Advanced Search**
-- **Instant search** by cryptocurrency name or symbol
-- Real-time filtering as you type
-- Clean, responsive search interface with visual feedback
 
-### ❤️ **Personalized Favorites**
-- **Add/remove favorites** with one-tap functionality
-- **Real-time synchronization** across devices using Firebase Firestore
-- Persistent favorites storage with user authentication
-- Quick access to your preferred cryptocurrencies
+# 💹 CoinVibe – Flutter Crypto Tracker & News App
 
-### 📰 **Comprehensive Crypto News**
-- **Multi-category news feed** including:
-  - 🐂 Bullish News
-  - 🐻 Bearish News
-  - 📈 Trending Topics
-  - 🆕 Latest Updates
-  - ⭐ Handpicked Articles
-- **Detailed news viewer** with full article content
-- **Image-rich articles** with source attribution
-- Powered by **CoinStats API** for diverse news sources
+**CoinVibe** is a Flutter mobile app that provides live prices for the top 100 cryptocurrencies, a favorites/watchlist synced with Firebase, an instant search, and a multi-source crypto news feed.
 
-### 🔐 **Secure Authentication**
-- **Firebase Authentication** with email/password
-- **Google Sign-In** integration for seamless login
-- User profile management and data persistence
+This README was cleaned to remove duplicated/irrelevant blocks; screenshots (for recruiters/clients) are included below.
 
-## 🛠️ Technology Stack
+## ✨ Key Features
 
-### **Core Framework**
-- **Flutter 3.5.4+** - Cross-platform mobile development
-- **Dart 3.5.4+** - Modern, type-safe programming language
+- Live market data for top 100 cryptocurrencies (prices, market cap, 24h change)
+- Instant search by name or symbol with live filtering
+- Favorites/watchlist persisted with Firebase Firestore and synced across devices
+- Multi-source crypto news with detailed article view (CoinStats)
+- Firebase Authentication (email/password + Google Sign-In)
 
-### **Backend & APIs**
-- **Firebase Core** - App initialization and configuration
-- **Firebase Auth** - User authentication and security
-- **Firebase Firestore** - Real-time NoSQL database for favorites
-- **CoinMarketCap Pro API** - Cryptocurrency market data
-- **CoinStats API** - Cryptocurrency news and analysis
+## 📸 Screenshots (for recruiters & clients)
 
-### **State Management & UI**
-- **setState()** - Flutter's built-in state management
-- **Provider** - Dependency injection and state management (ready for expansion)
-- **Material Design 3** - Modern, responsive UI components
-- **Custom Themes** - Dark mode optimized for crypto trading
+### Dashboard
+![Dashboard](screenshots/dashboard-screen.jpg)
 
-### **Networking & Data**
-- **HTTP Package** - RESTful API communication
-- **JSON Parsing** - Efficient data serialization
-- **Async Programming** - Future-based operations with error handling
+### Search
+![Search](screenshots/search-screen.jpg)
 
-### **Additional Libraries**
-- **Google Sign-In** - OAuth2 authentication
-- **FL Chart** - Chart visualization (ready for implementation)
-- **Intl** - Internationalization support
-- **Flutter Launcher Icons** - Custom app icons
+### News
+![News](screenshots/news-screen.jpg)
 
+### Login / Register
+![Login/Register](screenshots/login-register-screen.jpg)
 
+### Profile
+![Profile](screenshots/profile-screen.jpg)
 
----
+> All screenshots are taken from the `screenshots/` folder.
 
-### **Backend & APIs**### **Backend & APIs**
+## 🛠️ Technology
 
-## 🚀 Getting Started
+- Flutter 3.5.4+ / Dart 3.5.4+
+- Firebase (Auth, Firestore)
 
-- **Firebase Core** - App initialization and configuration- **Firebase Core** - App initialization and configuration
+# 💹 CoinVibe – Flutter Crypto Tracker & News App
 
-### Prerequisites
+**CoinVibe** is a Flutter mobile app for tracking the top 100 cryptocurrencies, managing favorites, searching quickly by name/symbol, and reading crypto news from multiple sources.
 
-- **Firebase Auth** - User authentication and security- **Firebase Auth** - User authentication and security
+This README was cleaned to remove duplicated or development-only blocks. The app screenshots below are included to showcase the UI for recruiters and clients.
 
-- **Flutter SDK** (3.5.4 or higher)
+## ✨ Key Features
 
-- **Android Studio** or **VS Code** with Flutter extensions- **Firebase Firestore** - Real-time NoSQL database for favorites- **Firebase Firestore** - Real-time NoSQL database for favorites
+- Live market data for top 100 cryptocurrencies (price, market cap, 24h change)
+- Instant search with live filtering (name/symbol)
+- Favorites/watchlist persisted with Firebase Firestore and synced across devices
+- Multi-source crypto news with detailed article view (CoinStats)
+- Firebase Authentication (email/password and Google Sign-In)
 
-- **Android SDK** with API level 21+ (Android 5.0+)
+## 📸 Screenshots (for recruiters & clients)
 
-- Valid API keys from:- **CoinMarketCap Pro API** - Cryptocurrency market data- **CoinMarketCap Pro API** - Cryptocurrency market data
+**Dashboard**
+![Dashboard](screenshots/dashboard-screen.jpg)
 
-  - [CoinMarketCap Pro API](https://coinmarketcap.com/api/)
+**Search**
+![Search](screenshots/search-screen.jpg)
 
-  - [CoinStats API](https://coinstats.app/api)- **CoinStats API** - Cryptocurrency news and analysis- **CoinStats API** - Cryptocurrency news and analysis
+**News**
+![News](screenshots/news-screen.jpg)
 
+**Login / Register**
+![Login/Register](screenshots/login-register-screen.jpg)
 
+**Profile**
+![Profile](screenshots/profile-screen.jpg)
 
-### Installation
+> Images are in the `screenshots/` folder. Replace them with higher-resolution versions if needed for presentations.
 
+## 🛠️ Technology
 
+- Flutter 3.5.4+ / Dart 3.5.4+
+- Firebase (Auth, Firestore)
+- CoinMarketCap Pro API (market data)
+- CoinStats API (news)
+- Provider (ready for global state), setState() for local UI updates
 
-1. **Clone the repository**### **State Management & UI**### **State Management & UI**
+## 🚀 Quick start
 
-   ```bash
+1. Clone and install dependencies:
 
-   git clone https://github.com/Mwahib001/CoinVibe-Flutter.git- **setState()** - Flutter's built-in state management- **setState()** - Flutter's built-in state management
+```powershell
+git clone https://github.com/Mwahib001/CoinVibe-Flutter.git
+cd CoinVibe-Flutter
+flutter pub get
+```
 
-   cd CoinVibe-Flutter
+2. Configure Firebase:
 
-   ```- **Provider** - Dependency injection and state management (ready for expansion)- **Provider** - Dependency injection and state management (ready for expansion)
+- Create a Firebase project and enable Authentication + Firestore
+- Download `google-services.json` and put it in `android/app/`
+- Update `lib/firebase_options.dart` if needed
 
+3. Add API keys:
 
+- `lib/services/coin_list_service.dart` — set your CoinMarketCap API key
+- `lib/views/news_section.dart` — set your CoinStats API key
 
-2. **Install dependencies**- **Material Design 3** - Modern, responsive UI components- **Material Design 3** - Modern, responsive UI components
+4. Run locally:
 
-   ```bash
+```powershell
+flutter run
+```
 
-   flutter pub get- **Custom Themes** - Dark mode optimized for crypto trading- **Custom Themes** - Dark mode optimized for crypto trading
+Build (release):
 
-   ```
-
-
-
-3. **Configure Firebase**
-
-   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)### **Networking & Data**### **Networking & Data**
-
-   - Enable Authentication and Firestore Database
-
-   - Download `google-services.json` and place it in `android/app/`- **HTTP Package** - RESTful API communication- **HTTP Package** - RESTful API communication
-
-   - Update `firebase_options.dart` with your configuration
-
-- **JSON Parsing** - Efficient data serialization- **JSON Parsing** - Efficient data serialization
-
-4. **Configure API Keys**
-
-   - Update API keys in the service files:- **Async Programming** - Future-based operations with error handling- **Async Programming** - Future-based operations with error handling
-
-     - `lib/services/coin_list_service.dart` - CoinMarketCap API key
-
-     - `lib/views/news_section.dart` - CoinStats API key
-
-
-
-5. **Run the app**### **Additional Libraries**### **Additional Libraries**
-
-   ```bash
-
-   flutter run- **Google Sign-In** - OAuth2 authentication- **Google Sign-In** - OAuth2 authentication
-
-   ```
-
-- **FL Chart** - Chart visualization (ready for implementation)- **FL Chart** - Chart visualization (ready for implementation)
-
-### Building for Production
-
-- **Intl** - Internationalization support- **Intl** - Internationalization support
-
-**Android APK:**
-
-```bash- **Flutter Launcher Icons** - Custom app icons- **Flutter Launcher Icons** - Custom app icons
-
+```powershell
 flutter build apk --release
-
-```
-
-
-
-**Android App Bundle:**------
-
-```bash
-
 flutter build appbundle --release
-
 ```
 
-## 🚀 Getting Started## 🚀 Getting Started
+## Contributing
+
+1. Fork the repo
+2. Create a branch
+3. Commit your changes and push
+4. Open a pull request
+
+## License
+
+MIT — see the `LICENSE` file.
+
+## Developer
+
+Muhammad Wahib — https://github.com/Mwahib001
 
 ---
 
-
-
-## 📱 App Architecture
-
-### Prerequisites### Prerequisites
-
-### **Project Structure**
-
-```
-
-lib/
-
-├── main.dart                 # App entry point & routing- **Flutter SDK** (3.5.4 or higher)- **Flutter SDK** (3.5.4 or higher)
-
-├── firebase_options.dart     # Firebase configuration
-
-├── screens/                  # Main app screens- **Android Studio** or **VS Code** with Flutter extensions- **Android Studio** or **VS Code** with Flutter extensions
-
-│   ├── dashboard.dart        # Main dashboard with navigation
-
-│   ├── login.dart           # User authentication- **Android SDK** with API level 21+ (Android 5.0+)- **Android SDK** with API level 21+ (Android 5.0+)
-
-│   ├── register.dart        # User registration
-
-│   ├── main_screen.dart     # Welcome screen- Valid API keys from:- Valid API keys from:
-
-│   └── splash.dart          # App splash screen
-
-├── views/                    # Feature-specific views  - [CoinMarketCap Pro API](https://coinmarketcap.com/api/)  - [CoinMarketCap Pro API](https://coinmarketcap.com/api/)
-
-│   ├── display_coin.dart     # Cryptocurrency list display
-
-│   ├── search_view.dart      # Search functionality  - [CoinStats API](https://coinstats.app/api)  - [CoinStats API](https://coinstats.app/api)
-
-│   ├── favorites.dart        # Favorites management
-
-│   ├── news_section.dart     # News feed
-
-│   └── profile_view.dart     # User profile
-
-├── services/                 # API services & business logic### Installation### Installation
-
-│   ├── coin_list_service.dart # CoinMarketCap API integration
-
-│   ├── coin_news_service.dart # News API (alternative)
-
-│   ├── fetch_crypto.dart     # Crypto data fetching
-
-│   ├── google_sign.dart      # Google authentication1. **Clone the repository**1. **Clone the repository**
-
-│   └── live_charts.dart      # Chart data (future feature)
-
-├── modules/                  # Data models   ```bash   `ash
-
-│   ├── coin_list_model.dart  # Cryptocurrency data model
-
-│   └── coin_news.dart        # News data model   git clone https://github.com/Mwahib001/CoinVibe-Flutter.git   git clone https://github.com/Mwahib001/CoinVibe-Flutter.git
-
-└── assets/                   # Static assets
-
-    ├── images/              # App images   cd CoinVibe-Flutter   cd CoinVibe-Flutter
-
-    └── jsonData/            # Static data files
-
-```   ```   `
-
-
-
-### **State Management**
-
-- **Local State**: `setState()` for UI updates within screens
-
-- **Global State**: Provider pattern ready for complex state management2. **Install dependencies**2. **Install dependencies**
-
-- **Persistent State**: Firebase Firestore for user preferences
-
-   ```bash   `ash
-
-### **Navigation**
-
-- **Named Routes**: Clean, scalable navigation system   flutter pub get   flutter pub get
-
-- **Bottom Navigation**: Tab-based navigation for main features
-
-- **Stack Navigation**: Modal screens for details and authentication   ```   `
-
-
-
----
-
-
-
-## 🔧 Configuration3. **Configure Firebase**3. **Configure Firebase**
-
-
-
-### **API Keys Setup**   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
-
-
-
-**CoinMarketCap API:**   - Enable Authentication and Firestore Database   - Enable Authentication and Firestore Database
-
-```dart
-
-// In lib/services/coin_list_service.dart   - Download `google-services.json` and place it in `android/app/`   - Download google-services.json and place it in ndroid/app/
-
-final String _apiKey = 'YOUR_COINMARKETCAP_API_KEY';
-
-```   - Update `firebase_options.dart` with your configuration   - Update irebase_options.dart with your configuration
-
-
-
-**CoinStats API:**
-
-```dart
-
-// In lib/views/news_section.dart4. **Configure API Keys**4. **Configure API Keys**
-
-const String apiKey = 'YOUR_COINSTATS_API_KEY';
+If you'd like, I can also:
+
+- Reformat code blocks to be consistent
+- Add a short "How it works" section for developers
+- Produce a presentation-ready screenshot gallery (higher res)
 
 ```   - Update API keys in the service files:   - Update API keys in the service files:
 
@@ -314,470 +163,3 @@ Ensure your `android/app/build.gradle` includes:
 apply plugin: 'com.google.gms.google-services'
 
 ```
-
-
-
----5. **Run the app**5. **Run the app**
-
-
-
-## 🎨 UI/UX Design   ```bash   `ash
-
-
-
-### **Design Principles**   flutter run   flutter run
-
-- **Dark Theme Optimized** - Easy on the eyes for extended use
-
-- **Material Design 3** - Modern, accessible components   ```   `
-
-- **Responsive Layout** - Adapts to different screen sizes
-
-- **Intuitive Navigation** - Bottom tabs with clear icons
-
-- **Visual Feedback** - Loading states, error handling, success messages
-
-### Building for Production### Building for Production
-
-### **Color Scheme**
-
-- **Primary**: Yellow (#FFEB3B) for accents and highlights
-
-- **Background**: Dark Gray (#121212) for main screens
-
-- **Cards**: Medium Gray (#424242) for content containers**Android APK:****Android APK:**
-
-- **Text**: White (#FFFFFF) with gray variants for hierarchy
-
-```bash`ash
-
----
-
-flutter build apk --releaseflutter build apk --release
-
-## 📈 Performance Features
-
-````
-
-- **Efficient API Calls** - Cached data with smart refresh intervals
-
-- **Lazy Loading** - List virtualization for smooth scrolling
-
-- **Error Handling** - Graceful failure states with retry options
-
-- **Memory Management** - Proper disposal of controllers and listeners**Android App Bundle:****Android App Bundle:**
-
-- **Real-time Updates** - Firebase listeners for live data synchronization
-
-```bash`ash
-
----
-
-flutter build appbundle --releaseflutter build appbundle --release
-
-## 🔒 Security & Privacy
-
-````
-
-- **Secure API Keys** - Environment-based configuration
-
-- **Firebase Security Rules** - Database access control
-
-- **OAuth2 Integration** - Secure Google authentication
-
-- **Data Encryption** - Firebase's built-in encryption------
-
-- **User Data Protection** - GDPR-compliant data handling
-
-
-
----
-
-## 📱 App Architecture## 📱 App Architecture
-
-## 🚀 Future Enhancements
-
-
-
-- **Price Charts** - Interactive candlestick charts with FL Chart
-
-- **Push Notifications** - Price alerts and news updates### **Project Structure**### **Project Structure**
-
-- **Portfolio Tracking** - Investment portfolio management
-
-- **Multi-language Support** - Internationalization with Intl````
-
-- **Offline Mode** - Cached data for offline viewing
-
-- **Watchlist** - Advanced watchlist with custom alertslib/lib/
-
-
-
----├── main.dart                 # App entry point & routing├── main.dart                 # App entry point & routing
-
-
-
-## 🧪 Testing├── firebase_options.dart     # Firebase configuration├── firebase_options.dart     # Firebase configuration
-
-
-
-Run tests:├── screens/                  # Main app screens├── screens/                  # Main app screens
-
-```bash
-
-flutter test│   ├── dashboard.dart        # Main dashboard with navigation│   ├── dashboard.dart        # Main dashboard with navigation
-
-```
-
-│   ├── login.dart           # User authentication│   ├── login.dart           # User authentication
-
-Run integration tests:
-
-```bash│   ├── register.dart        # User registration│   ├── register.dart        # User registration
-
-flutter drive --target=test_driver/app.dart
-
-```│   ├── main_screen.dart     # Welcome screen│   ├── main_screen.dart     # Welcome screen
-
-
-
----│   └── splash.dart          # App splash screen│   └── splash.dart          # App splash screen
-
-
-
-## 📝 Contributing├── views/                    # Feature-specific views├── views/                    # Feature-specific views
-
-
-
-1. Fork the repository│   ├── display_coin.dart     # Cryptocurrency list display│   ├── display_coin.dart     # Cryptocurrency list display
-
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-
-3. Commit your changes (`git commit -m 'Add amazing feature'`)│   ├── search_view.dart      # Search functionality│   ├── search_view.dart      # Search functionality
-
-4. Push to the branch (`git push origin feature/amazing-feature`)
-
-5. Open a Pull Request│   ├── favorites.dart        # Favorites management│   ├── favorites.dart        # Favorites management
-
-
-
----│   ├── news_section.dart     # News feed│   ├── news_section.dart     # News feed
-
-
-
-## 📄 License│   └── profile_view.dart     # User profile│   └── profile_view.dart     # User profile
-
-
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.├── services/                 # API services & business logic├── services/                 # API services & business logic
-
-
-
----│   ├── coin_list_service.dart # CoinMarketCap API integration│   ├── coin_list_service.dart # CoinMarketCap API integration
-
-
-
-## 👨‍💻 Developer│   ├── coin_news_service.dart # News API (alternative)│   ├── coin_news_service.dart # News API (alternative)
-
-
-
-**Muhammad Wahib**│   ├── fetch_crypto.dart     # Crypto data fetching│   ├── fetch_crypto.dart     # Crypto data fetching
-
-- GitHub: [@Mwahib001](https://github.com/Mwahib001)
-
-- LinkedIn: [Your LinkedIn Profile]│   ├── google_sign.dart      # Google authentication│   ├── google_sign.dart      # Google authentication
-
-
-
----│   └── live_charts.dart      # Chart data (future feature)│   └── live_charts.dart      # Chart data (future feature)
-
-
-
-## 🙏 Acknowledgments├── modules/                  # Data models├── modules/                  # Data models
-
-
-
-- **CoinMarketCap** for providing comprehensive cryptocurrency data│   ├── coin_list_model.dart  # Cryptocurrency data model│   ├── coin_list_model.dart  # Cryptocurrency data model
-
-- **CoinStats** for rich crypto news content
-
-- **Firebase** for robust backend services│   └── coin_news.dart        # News data model│   └── coin_news.dart        # News data model
-
-- **Flutter Team** for the amazing cross-platform framework
-
-└── assets/                   # Static assets└── assets/                   # Static assets
-
----
-
-    ├── images/              # App images    ├── images/              # App images
-
-*Built with ❤️ using Flutter*
-    └── jsonData/            # Static data files    └── jsonData/            # Static data files
-
-````
-
-
-
-### **State Management**### **State Management**
-
-- **Local State**: `setState()` for UI updates within screens- **Local State**: setState() for UI updates within screens
-
-- **Global State**: Provider pattern ready for complex state management- **Global State**: Provider pattern ready for complex state management
-
-- **Persistent State**: Firebase Firestore for user preferences- **Persistent State**: Firebase Firestore for user preferences
-
-
-
-### **Navigation**### **Navigation**
-
-- **Named Routes**: Clean, scalable navigation system- **Named Routes**: Clean, scalable navigation system
-
-- **Bottom Navigation**: Tab-based navigation for main features- **Bottom Navigation**: Tab-based navigation for main features
-
-- **Stack Navigation**: Modal screens for details and authentication- **Stack Navigation**: Modal screens for details and authentication
-
-
-
-------
-
-
-
-## 🔧 Configuration## 🔧 Configuration
-
-
-
-### **API Keys Setup**### **API Keys Setup**
-
-
-
-**CoinMarketCap API:****CoinMarketCap API:**
-
-```dart`dart
-
-// In lib/services/coin_list_service.dart// In lib/services/coin_list_service.dart
-
-final String _apiKey = 'YOUR_COINMARKETCAP_API_KEY';final String _apiKey = 'YOUR_COINMARKETCAP_API_KEY';
-
-````
-
-
-
-**CoinStats API:****CoinStats API:**
-
-```dart`dart
-
-// In lib/views/news_section.dart// In lib/views/news_section.dart
-
-const String apiKey = 'YOUR_COINSTATS_API_KEY';const String apiKey = 'YOUR_COINSTATS_API_KEY';
-
-````
-
-
-
-### **Firebase Configuration**### **Firebase Configuration**
-
-Ensure your `android/app/build.gradle` includes:Ensure your ndroid/app/build.gradle includes:
-
-```gradle`gradle
-
-apply plugin: 'com.google.gms.google-services'apply plugin: 'com.google.gms.google-services'
-
-````
-
-
-
-------
-
-
-
-## 🎨 UI/UX Design## 🎨 UI/UX Design
-
-
-
-### **Design Principles**### **Design Principles**
-
-- **Dark Theme Optimized** - Easy on the eyes for extended use- **Dark Theme Optimized** - Easy on the eyes for extended use
-
-- **Material Design 3** - Modern, accessible components- **Material Design 3** - Modern, accessible components
-
-- **Responsive Layout** - Adapts to different screen sizes- **Responsive Layout** - Adapts to different screen sizes
-
-- **Intuitive Navigation** - Bottom tabs with clear icons- **Intuitive Navigation** - Bottom tabs with clear icons
-
-- **Visual Feedback** - Loading states, error handling, success messages- **Visual Feedback** - Loading states, error handling, success messages
-
-
-
-### **Color Scheme**### **Color Scheme**
-
-- **Primary**: Yellow (#FFEB3B) for accents and highlights- **Primary**: Yellow (#FFEB3B) for accents and highlights
-
-- **Background**: Dark Gray (#121212) for main screens- **Background**: Dark Gray (#121212) for main screens
-
-- **Cards**: Medium Gray (#424242) for content containers- **Cards**: Medium Gray (#424242) for content containers
-
-- **Text**: White (#FFFFFF) with gray variants for hierarchy- **Text**: White (#FFFFFF) with gray variants for hierarchy
-
-
-
-------
-
-
-
-## 📈 Performance Features## 📈 Performance Features
-
-
-
-- **Efficient API Calls** - Cached data with smart refresh intervals- **Efficient API Calls** - Cached data with smart refresh intervals
-
-- **Lazy Loading** - List virtualization for smooth scrolling- **Lazy Loading** - List virtualization for smooth scrolling
-
-- **Error Handling** - Graceful failure states with retry options- **Error Handling** - Graceful failure states with retry options
-
-- **Memory Management** - Proper disposal of controllers and listeners- **Memory Management** - Proper disposal of controllers and listeners
-
-- **Real-time Updates** - Firebase listeners for live data synchronization- **Real-time Updates** - Firebase listeners for live data synchronization
-
-
-
-------
-
-
-
-## 🔒 Security & Privacy## 🔒 Security & Privacy
-
-
-
-- **Secure API Keys** - Environment-based configuration- **Secure API Keys** - Environment-based configuration
-
-- **Firebase Security Rules** - Database access control- **Firebase Security Rules** - Database access control
-
-- **OAuth2 Integration** - Secure Google authentication- **OAuth2 Integration** - Secure Google authentication
-
-- **Data Encryption** - Firebase's built-in encryption- **Data Encryption** - Firebase's built-in encryption
-
-- **User Data Protection** - GDPR-compliant data handling- **User Data Protection** - GDPR-compliant data handling
-
-
-
-------
-
-
-
-## 🚀 Future Enhancements## 🚀 Future Enhancements
-
-
-
-- **Price Charts** - Interactive candlestick charts with FL Chart- **Price Charts** - Interactive candlestick charts with FL Chart
-
-- **Push Notifications** - Price alerts and news updates- **Push Notifications** - Price alerts and news updates
-
-- **Portfolio Tracking** - Investment portfolio management- **Portfolio Tracking** - Investment portfolio management
-
-- **Multi-language Support** - Internationalization with Intl- **Multi-language Support** - Internationalization with Intl
-
-- **Offline Mode** - Cached data for offline viewing- **Offline Mode** - Cached data for offline viewing
-
-- **Watchlist** - Advanced watchlist with custom alerts- **Watchlist** - Advanced watchlist with custom alerts
-
-
-
-------
-
-
-
-## 🧪 Testing## 🧪 Testing
-
-
-
-Run tests:Run tests:
-
-```bash`ash
-
-flutter testflutter test
-
-````
-
-
-
-Run integration tests:Run integration tests:
-
-```bash`ash
-
-flutter drive --target=test_driver/app.dartflutter drive --target=test_driver/app.dart
-
-````
-
-
-
-------
-
-
-
-## 📝 Contributing## 📝 Contributing
-
-
-
-1. Fork the repository1. Fork the repository
-
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)2. Create a feature branch (git checkout -b feature/amazing-feature)
-
-3. Commit your changes (`git commit -m 'Add amazing feature'`)3. Commit your changes (git commit -m 'Add amazing feature')
-
-4. Push to the branch (`git push origin feature/amazing-feature`)4. Push to the branch (git push origin feature/amazing-feature)
-
-5. Open a Pull Request5. Open a Pull Request
-
-
-
-------
-
-
-
-## 📄 License## 📄 License
-
-
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
-
-------
-
-
-
-## 👨‍💻 Developer## 👨‍💻 Developer
-
-
-
-**Muhammad Wahib****Muhammad Wahib**
-
-- GitHub: [@Mwahib001](https://github.com/Mwahib001)- GitHub: [@Mwahib001](https://github.com/Mwahib001)
-
-- LinkedIn: [Your LinkedIn Profile]- LinkedIn: [Your LinkedIn Profile]
-
-
-
-------
-
-
-
-## 🙏 Acknowledgments## 🙏 Acknowledgments
-
-
-
-- **CoinMarketCap** for providing comprehensive cryptocurrency data- **CoinMarketCap** for providing comprehensive cryptocurrency data
-
-- **CoinStats** for rich crypto news content- **CoinStats** for rich crypto news content
-
-- **Firebase** for robust backend services- **Firebase** for robust backend services
-
-- **Flutter Team** for the amazing cross-platform framework- **Flutter Team** for the amazing cross-platform framework
-
-
-
-------
-
-
-
-*Built with ❤️ using Flutter**Built with ❤️ using Flutter*
